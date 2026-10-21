@@ -1,18 +1,24 @@
-# Fase Atual do Projeto
+# Documento de acompanhamento de Atividades
 
-As tarefas na atual fase se resumen na prototipação do projeto como um todo. Confeção dos protótipos das telas iniciais do sistemas e idealização dos diferenciais do app.
+O documento tem como objetivo servir como um mapa, a fim de identificar as tarefas desenvolvidas e os processos atuais no desenvolvimento do projeto
 
-## Tecnológias
+## Sprint 1
 
-- Sistema desenvolvido para Web
-- Git e GitHub
-- Java: Springboot
-- HTML
-- CSS: bootstrap
-- JavaScript
-- Arquivos csv para persistencia
+# Enquete de acompanhamento de protótipos já feitos
 
-## Diferencial
+Selecione uma ou mais opções.
 
-- Animação do processo de andamento do jogo: Um fugitivo sendo levardo a forca.
-- Apresentação e acrescimo de vocabulário, apresentação de sinonimos e exemplos da palavra do jogo da forca ao final da partida.
+| Seleção | Tarefa |
+|---|---|
+| [ x ] | Login - Tela de Login |
+| [   ] | Login - Recuperar senha |
+| [   ] | Login - Cadastro do primeiro Adm |
+| [ x ] | Menu - jogador |
+| [ x ] | Menu - Adm |
+| [   ] | Histórico de partidas |
+| [ x ] | Consulta de Ranquês |
+| [   ] | Jogar Sozinho ou para dois |
+| [   ] | ADM - Atualizar vocabulário |
+| [   ] | ADM - cadastrar jogador |
+| [ x ] | Config: repositório github |
+| [ x ] | Config: Relatório |
