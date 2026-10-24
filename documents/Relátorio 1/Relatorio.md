@@ -11,14 +11,15 @@ Selecione uma ou mais opções.
 | Seleção | Tarefa |
 |---|---|
 | [ x ] | Login - Tela de Login |
-| [   ] | Login - Recuperar senha |
-| [   ] | Login - Cadastro do primeiro Adm |
+| [ x ] | Login - Recuperar senha |
+| [ x ] | Login - Cadastro do primeiro Adm |
 | [ x ] | Menu - jogador |
 | [ x ] | Menu - Adm |
 | [   ] | Histórico de partidas |
 | [ x ] | Consulta de Ranquês |
 | [   ] | Jogar Sozinho ou para dois |
 | [   ] | ADM - Atualizar vocabulário |
-| [   ] | ADM - cadastrar jogador |
+| [ x ] | ADM - cadastrar jogador |
 | [ x ] | Config: repositório github |
 | [ x ] | Config: Relatório |
+| [   ] | Config: Fluxograma das Telas |
