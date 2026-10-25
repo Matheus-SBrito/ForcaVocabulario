@@ -37,3 +37,15 @@ Durante a sprint, também serão realizadas reuniões diárias para acompanhar o
 A equipe estabeleceu uma carga horária mínima de **duas horas semanais por integrante**, dedicada individualmente ao desenvolvimento do projeto.
 
 Para facilitar o trabalho colaborativo e evitar conflitos durante o desenvolvimento, será utilizado o **Git**, integrado ao **GitHub**, como ferramenta de controle de versão. Essa combinação permitirá o gerenciamento do código-fonte, o acompanhamento das alterações e a integração das contribuições de todos os integrantes da equipe.
+
+
+## Fluxos Básicos do Jogo
+
+**Fluxos de Processos básicos das funcionalidades do sistema:**
+
+<img src="./documents/Fluxo de Funcionalidades.png" alt="Fluxo de Funcionalidades">
+
+
+**Ordenação dos protótipos das telas do sistema:**
+
+<img src="./documents/Fluxo de Telas.png" alt="Prótotipos das Telas">
