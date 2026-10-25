@@ -4,7 +4,7 @@ O documento tem como objetivo servir como um mapa, a fim de identificar as taref
 
 ## Sprint 1
 
-# Enquete de acompanhamento de protótipos já feitos
+### Enquete de acompanhamento de protótipos já feitos
 
 Selecione uma ou mais opções.
 
@@ -15,10 +15,10 @@ Selecione uma ou mais opções.
 | [ x ] | Login - Cadastro do primeiro Adm |
 | [ x ] | Menu - jogador |
 | [ x ] | Menu - Adm |
-| [   ] | Histórico de partidas |
+| [ x ] | Histórico de partidas |
 | [ x ] | Consulta de Ranquês |
-| [   ] | Jogar Sozinho ou para dois |
-| [   ] | ADM - Atualizar vocabulário |
+| [ x ] | Jogar Sozinho ou para dois |
+| [ x ] | ADM - Atualizar vocabulário |
 | [ x ] | ADM - cadastrar jogador |
 | [ x ] | Config: repositório github |
 | [ x ] | Config: Relatório |

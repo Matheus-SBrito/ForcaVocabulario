@@ -1,35 +1,39 @@
 # Projeto Jogo da Forca
 
-O seguinte repositório tem como principal objetivo desenvolver habilidades relacionadas ao paradgma  de POO (Programação Orientada a Objetos). Trata-se do desenvolvimento de um jogo, voltado a multiplataforma, desenvolvido para web com elementos de design responsivo, que busca fornecer uma experiencia dinâmica, sendo possível jogar 1 a 2 jogadores, numa mesma partida.
+Este repositório tem como principal objetivo desenvolver habilidades relacionadas ao paradigma de **Programação Orientada a Objetos (POO)** por meio da implementação de um jogo da forca multiplataforma, desenvolvido para a Web e com design responsivo.
 
-## Diferencial
+O projeto busca proporcionar uma experiência dinâmica e interativa, permitindo partidas com **1 ou 2 jogadores**, compartilhando a mesma sessão de jogo.
 
-O sistema se propõe a ser não somente um jogo de adivinhação palavras, mas também, oferecer uma experiencia educativa, visto que ao final de cada jogo idealiza-se a apresentação do significado da palavra, como utiliza-la e exemplos de contextualização.
+## Diferenciais
 
-Além disso, a idealização do jogo visa desenvolver uma animação dinâmica, onde cada erro provocária uma reação na dinâmica de animação ao fundo da partida.
+O sistema propõe-se a ser mais do que um simples jogo de adivinhação de palavras. A proposta também contempla um caráter educativo, com a apresentação, ao final de cada partida, do significado da palavra utilizada, de como empregá-la e de exemplos de uso em diferentes contextos.
 
-## Tecnológias
+Além disso, pretende-se implementar animações dinâmicas no cenário da partida, de modo que cada erro cometido pelo jogador provoque uma reação visual no ambiente do jogo, tornando a experiência mais interativa e envolvente.
 
-- Sistema desenvolvido para Web
-- Git e GitHub
-- Java: Springboot
-- HTML
-- CSS: bootstrap
-- JavaScript
-- Arquivos csv para persistencia
+## Tecnologias
+
+- **Plataforma:** Web;
+- **Controle de versão:** Git;
+- **Hospedagem e colaboração:** GitHub;
+- **Back-end:** Java com Spring Boot;
+- **Front-end:** HTML, CSS e JavaScript;
+- **Framework CSS:** Bootstrap;
+- **Persistência de dados:** arquivos CSV.
 
 ## Equipe de Desenvolvimento
 
-- [ Matheus Brito ] { <https://github.com/Matheus-SBrito> }
-- [ Henrique Gabriel ] { <https://github.com/Henrique-06> }
-- [ Victor Kauã ] { <https://github.com/vkaua2007-source> }
+- [Matheus Brito](https://github.com/Matheus-SBrito)
+- [Henrique Gabriel](https://github.com/Henrique-06)
+- [Victor Kauã](https://github.com/vkaua2007-source)
 
-### Metodologia de Desenvolvimento e Organição
+### Metodologia de Desenvolvimento e Organização
 
-O metodo de desenvolvimento de trabalho da equipe baseia-se em um pseudo `Scrum`. Nos finais de semanas, todos os integrantes da equipe, no mínimo 2, se reunirão para defirem o escopo de tarefas a serem realizadas no periodo determinado para a sprint. Cada sprint prevê 6 dias para a conclusão de todas as atividades levantadas no escopo de desenvolvimento, durante as reuniões de finais de semana.
+A metodologia de trabalho adotada pela equipe baseia-se em uma **adaptação simplificada do Scrum**, com o objetivo de organizar as atividades, acompanhar o progresso e promover a colaboração entre os integrantes.
 
-Além disso, durante todo o periodo da sprint ocorrerá reuniões diarias para o acompanhamento e concientização, de todos os integrante, em relação ao desenvolvimento e participação de cada um na conclusão das atividades e tarefas definidas no escopo.
+Nos finais de semana, os integrantes da equipe, com a participação de pelo menos dois membros, realizarão reuniões para definir o escopo de tarefas a serem executadas durante cada sprint. Cada sprint terá duração prevista de seis dias, período destinado à conclusão das atividades estabelecidas no planejamento.
 
-Foi acertado que o desenvolvimento do projeto seria realizado através de uma carga horária de, no mínimo, 2 horas por semana, por cada um dos integrantes, individualmente.
+Durante a sprint, também serão realizadas reuniões diárias para acompanhar o progresso do projeto, identificar possíveis impedimentos e manter todos os integrantes informados sobre o andamento das atividades e a participação de cada membro na execução das tarefas.
 
-Para que o trabalho recorra sem demais impedimentos, foi escolhido o uso de tecnologia de versionamento de código `git`, integrada ao `GitHub`, para o desenvolvimento em equipe.
+A equipe estabeleceu uma carga horária mínima de **duas horas semanais por integrante**, dedicada individualmente ao desenvolvimento do projeto.
+
+Para facilitar o trabalho colaborativo e evitar conflitos durante o desenvolvimento, será utilizado o **Git**, integrado ao **GitHub**, como ferramenta de controle de versão. Essa combinação permitirá o gerenciamento do código-fonte, o acompanhamento das alterações e a integração das contribuições de todos os integrantes da equipe.
