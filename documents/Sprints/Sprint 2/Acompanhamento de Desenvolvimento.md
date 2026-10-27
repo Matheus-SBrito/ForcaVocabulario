@@ -23,7 +23,7 @@ Selecione uma ou mais opções.
 ```mermaid
 erDiagram
 
-# Susgestão - Tanto Jogador quanto Administrador são especializações de Usuário
+%% Susgestão - Tanto Jogador quanto Administrador são especializações de Usuário
 
 
 Usuario {
