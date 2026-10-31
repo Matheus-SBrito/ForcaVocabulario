@@ -12,7 +12,7 @@ Além disso, pretende-se implementar animações dinâmicas no cenário da parti
 
 ## Tecnologias
 
-- **Plataforma:** Web;
+- **Plataforma:** Desktop;
 - **Controle de versão:** Git;
 - **Hospedagem e colaboração:** GitHub;
 - **Back-end e Swing:** Java com Swing;
