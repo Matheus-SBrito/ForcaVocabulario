@@ -9,7 +9,7 @@ O documento tem como objetivo servir como um mapa, a fim de identificar as taref
 Selecione uma ou mais opções.
 
 | Seleção | Tarefa |
-|---|---|
+| --- | --- |
 | [   ] | Tela Login - HTML e CSS |
 | [   ] | Cadastro 1º ADM - HTML e CSS |
 | [   ] | Esqueceu a Senha - HTML e CSS |
@@ -132,6 +132,5 @@ class Usuario {
 
 class Jogador{-tipoUsuario: TipoUsuario = Jogador}
 class Administrador{-tipoUsuario: TipoUsuario = Administrador}
-
 
 ```

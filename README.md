@@ -1,6 +1,6 @@
 # Projeto Jogo da Forca
 
-Este repositório tem como principal objetivo desenvolver habilidades relacionadas ao paradigma de **Programação Orientada a Objetos (POO)** por meio da implementação de um jogo da forca multiplataforma, desenvolvido para a Web e com design responsivo.
+Este repositório tem como principal objetivo desenvolver habilidades relacionadas ao paradigma de **Programação Orientada a Objetos (POO)** por meio da implementação de um jogo da forca multiplataforma, desenvolvido para desktop.
 
 O projeto busca proporcionar uma experiência dinâmica e interativa, permitindo partidas com **1 ou 2 jogadores**, compartilhando a mesma sessão de jogo.
 
@@ -15,9 +15,7 @@ Além disso, pretende-se implementar animações dinâmicas no cenário da parti
 - **Plataforma:** Web;
 - **Controle de versão:** Git;
 - **Hospedagem e colaboração:** GitHub;
-- **Back-end:** Java com Spring Boot;
-- **Front-end:** HTML, CSS e JavaScript;
-- **Framework CSS:** Bootstrap;
+- **Back-end e Swing:** Java com Swing;
 - **Persistência de dados:** arquivos CSV.
 
 ## Equipe de Desenvolvimento
@@ -44,7 +42,6 @@ Para facilitar o trabalho colaborativo e evitar conflitos durante o desenvolvime
 **Fluxos de Processos básicos das funcionalidades do sistema:**
 
 <img src="./documents/Fluxo de Funcionalidades.png" alt="Fluxo de Funcionalidades">
-
 
 **Ordenação dos protótipos das telas do sistema:**
 
