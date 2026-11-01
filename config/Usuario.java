@@ -31,5 +31,15 @@ public abstract class Usuario {
 	public void setSenha (String senha) {this.senha = senha;}
 	
 	
+	@Override
+	public String toString () {
+		return nomeDeUsuario;}
+	
+	public boolean equals (Usuario obj) {
+		if (obj != null &&  obj instanceof Usuario) return true;
+		return false;}
+	
+	
+	
 
 }
