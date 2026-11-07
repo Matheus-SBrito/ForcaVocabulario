@@ -7,6 +7,7 @@ public class UtilScreens {
 	
 	public static final Color LARANJA = new Color(255, 145, 77);
 	public static final Color LARANJA_CLARO = new Color(255, 190, 122);
+	public static final Color AMARELO_CLARO = new Color(0xFFEFAA);
 
 	private UtilScreens() {};
 	

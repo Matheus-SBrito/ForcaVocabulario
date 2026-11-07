@@ -1,12 +1,16 @@
 package screens;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import java.awt.BorderLayout;
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
@@ -25,6 +29,7 @@ public class Login extends JFrame {
 		this.configuracao();
 		this.adicaoDeMargens();
 		this.painelCaixaLogin();
+		this.criarLabelForca();
 		
 		this.setVisible(true);
 	};
@@ -62,17 +67,18 @@ public class Login extends JFrame {
 		
 		JPanel margenEsquerda = new JPanel();
 			margenEsquerda.setPreferredSize(new Dimension(250, 0));
-			margenEsquerda.setBackground(UtilScreens.LARANJA);
+			margenEsquerda.setBackground(UtilScreens.AMARELO_CLARO);
+			margenEsquerda.add(criarLabelForca(), BorderLayout.CENTER);
 		JPanel margenDireita = new JPanel();
 			margenDireita.setPreferredSize(new Dimension(250, 0));
-			margenDireita.setBackground(UtilScreens.LARANJA);
+			margenDireita.setBackground(UtilScreens.AMARELO_CLARO);
 				
 		JPanel margenAcima = new JPanel();
 			margenAcima.setPreferredSize(new Dimension(0, 100));
-			margenAcima.setBackground(UtilScreens.LARANJA);
+			margenAcima.setBackground(UtilScreens.AMARELO_CLARO);
 		JPanel margenAbaixo = new JPanel();
 			margenAbaixo.setPreferredSize(new Dimension(0, 100));
-			margenAbaixo.setBackground(UtilScreens.LARANJA);
+			margenAbaixo.setBackground(UtilScreens.AMARELO_CLARO);
 		
 		// -- Adicionando ao Painel principal -- 
 			
@@ -96,6 +102,16 @@ public class Login extends JFrame {
 		
 		
 		this.add(painelLogin, BorderLayout.CENTER);
+	}
+	
+	private JLabel criarLabelForca() {
+		ImageIcon forca = new ImageIcon(getClass().getResource("/images/forcaBonecoCompleto.png"));		Image imagemRedimensionada = forca.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+	    Image redimensionada = forca.getImage().getScaledInstance(-1, 500, Image.SCALE_SMOOTH);
+	    JLabel label = new JLabel(new ImageIcon(redimensionada));
+	    label.setHorizontalAlignment(JLabel.CENTER);
+	    return label;
+	   
+		
 	}
 	
 
