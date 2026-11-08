@@ -105,7 +105,7 @@ public class Login extends JFrame {
 	}
 	
 	private JLabel criarLabelForca() {
-		ImageIcon forca = new ImageIcon(getClass().getResource("/images/forcaBonecoCompleto.png"));		Image imagemRedimensionada = forca.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+		ImageIcon forca = new ImageIcon(getClass().getResource("/images/forcaBonecoCompleto.png"));	
 	    Image redimensionada = forca.getImage().getScaledInstance(-1, 500, Image.SCALE_SMOOTH);
 	    JLabel label = new JLabel(new ImageIcon(redimensionada));
 	    label.setHorizontalAlignment(JLabel.CENTER);
