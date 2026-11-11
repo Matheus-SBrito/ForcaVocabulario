@@ -1,6 +1,6 @@
-package config;
+package config.tabelas_base;
 
-public abstract class Usuario {
+public class Usuario {
 	
 	private String nomeDeUsuario;
 	private String email;
@@ -35,8 +35,13 @@ public abstract class Usuario {
 	public String toString () {
 		return nomeDeUsuario;}
 	
+	
 	public boolean equals (Usuario obj) {
-		if (obj != null &&  obj instanceof Usuario) return true;
+		if (obj != null &&  obj instanceof Usuario) 
+			if (
+				email.equals(obj.getEmail()) || 
+				nomeDeUsuario.equals(obj.getNomeDeUsuario())
+				) return true;
 		return false;}
 	
 	

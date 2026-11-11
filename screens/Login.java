@@ -48,15 +48,15 @@ public class Login extends JFrame {
 	
 	/*
 	 * -------------------------------
-	 * Construção das Telas e Design
-	 * 			'Responsivo'
+	 *  Construção dos Componentes de
+	 * 			  Design
 	 * -------------------------------
 	 */
 	
 	private void configuracao () { // Configurações Básicas da tela
 		int[] tamanhoTela = UtilScreens.obterTamanhosDaTela();
 		this.setTitle("Login");
-		this.setSize(tamanhoTela[0], tamanhoTela[1]);
+		this.setSize(1000, 1000);
 		this.setLayout(new BorderLayout());
 		this.setLocationRelativeTo(null);
 	}
@@ -66,7 +66,8 @@ public class Login extends JFrame {
 		// -- Construção do fundo, Margens do painel --
 		
 		JPanel margenEsquerda = new JPanel();
-			margenEsquerda.setPreferredSize(new Dimension(250, 0));
+			margenEsquerda.setMaximumSize(new Dimension(500, 0));
+			margenEsquerda.setMinimumSize(new Dimension(200, 0));
 			margenEsquerda.setBackground(UtilScreens.AMARELO_CLARO);
 			margenEsquerda.add(criarLabelForca(), BorderLayout.CENTER);
 		JPanel margenDireita = new JPanel();

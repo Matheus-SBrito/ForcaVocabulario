@@ -1,4 +1,4 @@
-package config;
+package config.tabelas_base;
 
 public class Administrador extends Usuario {
 
