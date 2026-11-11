@@ -20,6 +20,9 @@ public class Usuario {
 	}
 	
 	
+	public Usuario() {}
+
+
 	// Metodos de Visibilidade
 	public String getNomeDeUsuario () {return nomeDeUsuario;}
 	public void setNomeDeUsuario (String nomeDeUsuario) {this.nomeDeUsuario = nomeDeUsuario;}
