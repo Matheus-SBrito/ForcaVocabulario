@@ -1,4 +1,5 @@
 package screens;
+
 import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
@@ -14,49 +15,44 @@ import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
-public class MenuInicial extends JFrame{
-private static MenuInicial INSTANCIA;
+public class MenuInicial extends JFrame {
+    private static MenuInicial INSTANCIA;
 
-	private JButton btnJogar;
+    private JButton btnJogar;
     private JButton btnCadastrarJogador;
     private JButton btnHistoricoPartidas;
     private JButton btnAtualizarVocabulario;
     private JButton btnMinhaConta;
     private JButton btnRankingGlobal;
     private JButton btnConfiguracoes;
-	
-	
-	private MenuInicial() {
-		gerarTela();
-		gerarComponentes();
-		
-		this.setVisible(true);
-	};
-	
-	
-	public static MenuInicial obterInstancia () {
-		if (INSTANCIA == null)
-			INSTANCIA = new MenuInicial();
-		
-		return INSTANCIA;
-			
-	}
-	
-	private void gerarTela(){
-		setTitle("TELA INICIAL");
-		setSize(800 , 600);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setLocationRelativeTo(null);
-	}
-	
-	private void gerarComponentes(){
-		gerarBotoes();
-		gerarObservadores();
-		montarTela();
-	}
-	
-	private void gerarBotoes(){
-		Dimension tamanhoPadrao = new Dimension(170, 35);
+    
+    private MenuInicial() {
+        gerarTela();
+        gerarComponentes();
+        this.setVisible(true);
+    }
+    
+    public static MenuInicial obterInstancia() {
+        if (INSTANCIA == null)
+            INSTANCIA = new MenuInicial();
+        return INSTANCIA;
+    }
+    
+    private void gerarTela() {
+        setTitle("TELA INICIAL");
+        setSize(800, 600);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+    }
+    
+    private void gerarComponentes() {
+        gerarBotoes();
+        gerarObservadores();
+        montarTela();
+    }
+    
+    private void gerarBotoes() {
+        Dimension tamanhoPadrao = new Dimension(170, 35);
 
         btnJogar = new JButton("Jogar");
         btnJogar.setPreferredSize(tamanhoPadrao);
@@ -78,20 +74,19 @@ private static MenuInicial INSTANCIA;
 
         btnConfiguracoes = new JButton("Configurações");
         btnConfiguracoes.setPreferredSize(tamanhoPadrao);
-	}
-	
-	private void gerarObservadores(){
-		btnJogar.addActionListener(new ObservadorDoBotaoJogar(this));
-		btnCadastrarJogador.addActionListener(new ObservadorDoBotaoCadrastarJogador(this));
-		btnHistoricoPartidas.addActionListener(new ObservadorDoBotaoHistoricoDePartidas(this));
-		btnAtualizarVocabulario.addActionListener(new ObservadorDoBotaoAtualizarVocabulario(this));
-		btnMinhaConta.addActionListener(new ObservadorDoBotaoMinhaConta(this));
-		btnRankingGlobal.addActionListener(new ObservadorDoBotaoRankingGlobal);
-		btnConfiguracoes.addActionListener(new ObservadorDoBotaoConfiguracoes);
+    }
+    
+    private void gerarObservadores() {
+        btnJogar.addActionListener(new ObservadorDoBotaoJogar(this));
+        btnCadastrarJogador.addActionListener(new ObservadorDoBotaoCadrastarJogador(this));
+       // btnHistoricoPartidas.addActionListener(new ObservadorDoBotaoHistoricoDePartidas(this));
+       // btnAtualizarVocabulario.addActionListener(new ObservadorDoBotaoAtualizarVocabulario(this));
+       // btnMinhaConta.addActionListener(new ObservadorDoBotaoMinhaConta(this));
+       // btnRankingGlobal.addActionListener(new ObservadorDoBotaoRankingGlobal(this));
+       // btnConfiguracoes.addActionListener(new ObservadorDoBotaoConfiguracoes(this));
+    }
 
-	}
-
-	private void montarTela() {
+    private void montarTela() {
         JPanel painelTopo = new JPanel(new FlowLayout(FlowLayout.LEFT, 15, 10));
         painelTopo.add(new JLabel("Jogo da Forca"));
         add(painelTopo, BorderLayout.NORTH);
@@ -107,7 +102,7 @@ private static MenuInicial INSTANCIA;
         add(splitPane, BorderLayout.CENTER);
     }
 
-	private JPanel criarPainelEsquerdo() {
+    private JPanel criarPainelEsquerdo() {
         JPanel painelEsquerdo = new JPanel(new BorderLayout(10, 10));
         painelEsquerdo.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
 
@@ -153,8 +148,7 @@ private static MenuInicial INSTANCIA;
                 {"Jogador 6", 20, 6}
         };
 
-	
-	JTable tabelaTop6 = new JTable(new DefaultTableModel(dadosTop6, colunas));
+        JTable tabelaTop6 = new JTable(new DefaultTableModel(dadosTop6, colunas));
         JScrollPane scrollTop6 = new JScrollPane(tabelaTop6);
         scrollTop6.setPreferredSize(new Dimension(350, 120));
         painelDireito.add(scrollTop6);
@@ -179,5 +173,9 @@ private static MenuInicial INSTANCIA;
         return painelDireito;
     }
 
-   
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            MenuInicial.obterInstancia();
+        });
+    }
 }
