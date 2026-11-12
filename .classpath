@@ -26,5 +26,6 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="/home/henrique/Downloads/xstream-1.4.21.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>

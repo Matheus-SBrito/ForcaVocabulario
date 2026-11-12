@@ -11,7 +11,7 @@ public class UtilScreens {
 
 	private UtilScreens() {};
 	
-	public static int[] obterTamanhosDaTela() {
+	 public static int[] obterTamanhosDaTela() {
 		// Obtém a ferramenta padrão do sistema
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         

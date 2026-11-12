@@ -29,10 +29,11 @@ public class MenuInicial extends JFrame {
     private MenuInicial() {
         gerarTela();
         gerarComponentes();
-        this.setVisible(true);
+        setVisible(true);
     }
     
     public static MenuInicial obterInstancia() {
+    	
         if (INSTANCIA == null)
             INSTANCIA = new MenuInicial();
         return INSTANCIA;
@@ -173,7 +174,7 @@ public class MenuInicial extends JFrame {
         return painelDireito;
     }
 
-    public static void main(String[] args) {
+   public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             MenuInicial.obterInstancia();
         });

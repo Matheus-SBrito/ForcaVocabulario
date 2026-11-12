@@ -23,4 +23,5 @@ public class MinhaConta extends JFrame {
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 22));
         add(lblTitulo, BorderLayout.CENTER);
     }
+
 }

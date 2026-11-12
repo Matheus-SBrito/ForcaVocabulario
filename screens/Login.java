@@ -54,9 +54,9 @@ public class Login extends JFrame {
 	 */
 	
 	private void configuracao () { // Configurações Básicas da tela
-		int[] tamanhoTela = UtilScreens.obterTamanhosDaTela();
+		 //int[] tamanhoTela = UtilScreens.obterTamanhosDaTela();
 		this.setTitle("Login");
-		this.setSize(1000, 1000);
+		this.setSize(300, 600);
 		this.setLayout(new BorderLayout());
 		this.setLocationRelativeTo(null);
 	}
