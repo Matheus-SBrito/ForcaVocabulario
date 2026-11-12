@@ -48,4 +48,39 @@ public class Partida {
 
 	public LocalDateTime getDataHora() {return dataHora;}
 	public void setDataHora(LocalDateTime dataHora) {this.dataHora = dataHora;}
+	
+	// Logica do jogo
+
+	public boolean tentarLetra(char letra) {
+		letra = Character.toLowerCase(letra);
+
+		if (isFinalizada() || !Character.isLetter(letra) || letrasTentadas.contains(letra))
+			return false;
+
+		letrasTentadas.add(letra);
+
+		if (palavra.toLowerCase().indexOf(letra) >= 0) {
+			if (todasLetrasDescobertas())
+				vitoria = true;
+			return true;
+		}
+
+		erros++;
+		return false;
+	}
+
+	// finalizar partida
+	
+	public boolean isFinalizada() {
+		return vitoria || erros >= maxErros;
+	}
+
+	// lê letra digitada e verifica palavra 
+	
+	private boolean todasLetrasDescobertas() {
+		for (char c : palavra.toLowerCase().toCharArray())
+			if (Character.isLetter(c) && !letrasTentadas.contains(c))
+				return false;
+		return true;
+	}
 }
