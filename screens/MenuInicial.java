@@ -25,33 +25,33 @@ public class MenuInicial extends JFrame {
     private JButton btnMinhaConta;
     private JButton btnRankingGlobal;
     private JButton btnConfiguracoes;
-    
+
     private MenuInicial() {
         gerarTela();
         gerarComponentes();
         setVisible(true);
     }
-    
+
     public static MenuInicial obterInstancia() {
-    	
+
         if (INSTANCIA == null)
             INSTANCIA = new MenuInicial();
         return INSTANCIA;
     }
-    
+
     private void gerarTela() {
         setTitle("TELA INICIAL");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
     }
-    
+
     private void gerarComponentes() {
         gerarBotoes();
         gerarObservadores();
         montarTela();
     }
-    
+
     private void gerarBotoes() {
         Dimension tamanhoPadrao = new Dimension(170, 35);
 
@@ -76,15 +76,15 @@ public class MenuInicial extends JFrame {
         btnConfiguracoes = new JButton("Configurações");
         btnConfiguracoes.setPreferredSize(tamanhoPadrao);
     }
-    
+
     private void gerarObservadores() {
         btnJogar.addActionListener(new ObservadorDoBotaoJogar(this));
         btnCadastrarJogador.addActionListener(new ObservadorDoBotaoCadrastarJogador(this));
-       // btnHistoricoPartidas.addActionListener(new ObservadorDoBotaoHistoricoDePartidas(this));
-       // btnAtualizarVocabulario.addActionListener(new ObservadorDoBotaoAtualizarVocabulario(this));
-       // btnMinhaConta.addActionListener(new ObservadorDoBotaoMinhaConta(this));
-       // btnRankingGlobal.addActionListener(new ObservadorDoBotaoRankingGlobal(this));
-       // btnConfiguracoes.addActionListener(new ObservadorDoBotaoConfiguracoes(this));
+        btnHistoricoPartidas.addActionListener(new ObservadorDoBotaoHistoricoDePartidas(this));
+        btnAtualizarVocabulario.addActionListener(new ObservadorDoBotaoAtualizarVocabulario(this));
+        btnMinhaConta.addActionListener(new ObservadorDoBotaoMinhaConta(this));
+        btnRankingGlobal.addActionListener(new ObservadorDoBotaoRankingGlobal(this));
+        // btnConfiguracoes.addActionListener(new ObservadorDoBotaoConfiguracoes(this));
     }
 
     private void montarTela() {
@@ -95,8 +95,7 @@ public class MenuInicial extends JFrame {
         JSplitPane splitPane = new JSplitPane(
                 JSplitPane.HORIZONTAL_SPLIT,
                 criarPainelEsquerdo(),
-                criarPainelDireito()
-        );
+                criarPainelDireito());
         splitPane.setResizeWeight(0.55);
         splitPane.setDividerSize(5);
 
@@ -116,14 +115,28 @@ public class MenuInicial extends JFrame {
         gbc.insets = new Insets(6, 6, 6, 6);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        gbc.gridx = 0; gbc.gridy = 0; painelBotoes.add(btnJogar, gbc);
-        gbc.gridx = 0; gbc.gridy = 1; painelBotoes.add(btnHistoricoPartidas, gbc);
-        gbc.gridx = 0; gbc.gridy = 2; painelBotoes.add(btnMinhaConta, gbc);
-        gbc.gridx = 0; gbc.gridy = 3; painelBotoes.add(btnRankingGlobal, gbc);
-        gbc.gridx = 0; gbc.gridy = 4; painelBotoes.add(btnConfiguracoes, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        painelBotoes.add(btnJogar, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        painelBotoes.add(btnHistoricoPartidas, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        painelBotoes.add(btnMinhaConta, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        painelBotoes.add(btnRankingGlobal, gbc);
+        gbc.gridx = 0;
+        gbc.gridy = 4;
+        painelBotoes.add(btnConfiguracoes, gbc);
 
-        gbc.gridx = 1; gbc.gridy = 0; painelBotoes.add(btnCadastrarJogador, gbc);
-        gbc.gridx = 1; gbc.gridy = 1; painelBotoes.add(btnAtualizarVocabulario, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        painelBotoes.add(btnCadastrarJogador, gbc);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        painelBotoes.add(btnAtualizarVocabulario, gbc);
 
         painelEsquerdo.add(painelBotoes, BorderLayout.CENTER);
         return painelEsquerdo;
@@ -139,14 +152,14 @@ public class MenuInicial extends JFrame {
         painelDireito.add(lblTop6);
         painelDireito.add(Box.createVerticalStrut(5));
 
-        String[] colunas = {"Nome do jogador", "Pontos", "Posição"};
+        String[] colunas = { "Nome do jogador", "Pontos", "Posição" };
         Object[][] dadosTop6 = {
-                {"Jogador 1", 100, 1},
-                {"Jogador 2", 90, 2},
-                {"Jogador 3", 85, 3},
-                {"Jogador 4", 84, 4},
-                {"Jogador 5", 23, 5},
-                {"Jogador 6", 20, 6}
+                { "Jogador 1", 100, 1 },
+                { "Jogador 2", 90, 2 },
+                { "Jogador 3", 85, 3 },
+                { "Jogador 4", 84, 4 },
+                { "Jogador 5", 23, 5 },
+                { "Jogador 6", 20, 6 }
         };
 
         JTable tabelaTop6 = new JTable(new DefaultTableModel(dadosTop6, colunas));
@@ -162,8 +175,8 @@ public class MenuInicial extends JFrame {
         painelDireito.add(Box.createVerticalStrut(5));
 
         Object[][] dadosPosicao = {
-                {"-", "-", "-"},
-                {"Jogador 0", 1, 99}
+                { "-", "-", "-" },
+                { "Jogador 0", 1, 99 }
         };
 
         JTable tabelaPosicao = new JTable(new DefaultTableModel(dadosPosicao, colunas));
@@ -174,7 +187,7 @@ public class MenuInicial extends JFrame {
         return painelDireito;
     }
 
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             MenuInicial.obterInstancia();
         });
