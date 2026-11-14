@@ -31,12 +31,11 @@ public class TelaInicial extends JFrame{
 	    private void configurarJanela() {
 	        setTitle("Jogo da Forca");
 	        setLayout(null);
-	        getContentPane().setPreferredSize(new Dimension(800, 600));
-	        getContentPane().setBackground(Color.YELLOW);
+			setSize(UtilScreens.LARGURA_PADRAO, UtilScreens.ALTURA_PADRAO);
+	        getContentPane().setBackground(UtilScreens.AMARELO_CLARO);
 	        setResizable(false);
 	        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        pack();                       // ajusta o tamanho da área útil (sem contar a barra de título)
-	        setLocationRelativeTo(null);  // centraliza DEPOIS do pack
+	        setLocationRelativeTo(null);
 	    }
 
 	    private void criarTitulo() {
@@ -47,8 +46,7 @@ public class TelaInicial extends JFrame{
 	    }
 
 	    private void criarImagemForca() {
-	        ImageIcon original = new ImageIcon(getClass().getResource("forcaBonecoCompleto.png"));
-	        Image redimensionada = original.getImage().getScaledInstance(-1, 420, Image.SCALE_SMOOTH);
+	    	ImageIcon original = new ImageIcon(getClass().getResource("/images/forcaBonecoCompleto.png"));	        Image redimensionada = original.getImage().getScaledInstance(-1, 420, Image.SCALE_SMOOTH);
 	        ImageIcon icone = new ImageIcon(redimensionada);
 
 	        JLabel lblForca = new JLabel(icone);
@@ -78,7 +76,7 @@ public class TelaInicial extends JFrame{
 	    
 	    private void gerarObservadores() {
 	    	btnPlay.addActionListener(new ObservadorDoBotaoPlay(this));
-	        btnPlay.addMouseListener(new ObsHoverPlay(btnPlay));
+	        btnPlay.addMouseListener(new ObservadorHoverDoBotaoPlay(btnPlay));
 	    }
 	
 }

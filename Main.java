@@ -1,11 +1,13 @@
 
-import screens.Login;
+import javax.swing.SwingUtilities;
 
+import screens.*;
 
 public class Main {
 	
 	
 	public static void main (String[] args) {
-		Login login = Login.obterInstancia();
+        SwingUtilities.invokeLater(() -> new TelaInicial().setVisible(true));
+
 	}
 }
