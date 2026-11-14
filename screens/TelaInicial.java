@@ -41,16 +41,16 @@ public class TelaInicial extends JFrame{
 	    private void criarTitulo() {
 	        JLabel lblTitulo = new JLabel("Jogo da Forca!!", SwingConstants.CENTER);
 	        lblTitulo.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
-	        lblTitulo.setBounds(0, 60, 880, 60);
+	        lblTitulo.setBounds(250, 60, 300, 60);
 	        add(lblTitulo);
 	    }
 
 	    private void criarImagemForca() {
-	    	ImageIcon original = new ImageIcon(getClass().getResource("/images/forcaBonecoCompleto.png"));	        Image redimensionada = original.getImage().getScaledInstance(-1, 420, Image.SCALE_SMOOTH);
+	    	ImageIcon original = new ImageIcon(getClass().getResource("/images/forcaBonecoCompleto.png"));
+	        Image redimensionada = original.getImage().getScaledInstance(-1, 380, Image.SCALE_SMOOTH);
 	        ImageIcon icone = new ImageIcon(redimensionada);
-
 	        JLabel lblForca = new JLabel(icone);
-	        lblForca.setBounds(20, 80, icone.getIconWidth(), icone.getIconHeight());
+	        lblForca.setBounds(0, 120, icone.getIconWidth(), icone.getIconHeight());
 	        add(lblForca);
 	    }
 	    
@@ -58,7 +58,7 @@ public class TelaInicial extends JFrame{
 
 	    private void criarBotaoPlay() {
 	    	    btnPlay = new JButton();
-	    	    btnPlay.setBounds(240, 280, 390, 120);
+	    	    btnPlay.setBounds(205, 280, 390, 120);
 	    	    btnPlay.setLayout(new GridLayout(1, 5, 15, 0));   // 5 colunas, 15 px de espaço entre elas
 	    	    btnPlay.setContentAreaFilled(false);
 	    	    btnPlay.setBorderPainted(false);

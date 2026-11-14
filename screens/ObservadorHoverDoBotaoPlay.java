@@ -17,7 +17,7 @@ public class ObservadorHoverDoBotaoPlay extends MouseAdapter{
 
 	    @Override
 	    public void mouseEntered(MouseEvent e) {
-	        pintar(UtilScreens.VINHO);
+	        pintar(UtilScreens.VERDE_CLARO);
 	    }
 
 	    @Override
