@@ -9,6 +9,7 @@ public class UtilScreens {
 	public static final Color LARANJA_CLARO = new Color(255, 190, 122);
 	public static final Color AMARELO_CLARO = new Color(0xFFEFAA);
 	public static final Color CINZA = new Color (200,200,200);
+	public static final Color CINZA_CLARO = new Color (230,230,230);
 	public static final Color BRANCO = new Color (255,255,255);
 	public static final Color PRETO = new Color (0,0,0);
 	

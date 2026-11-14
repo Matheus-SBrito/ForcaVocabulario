@@ -9,6 +9,8 @@ import javax.swing.ImageIcon;
 
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JPasswordField;
@@ -22,20 +24,39 @@ public class Login extends JFrame {
 	
 	
 	private static Login INSTANCIA;
+	private JTextField inputUsername;
+	private JPasswordField inputSenha;
 	
 	private Login () {
-		this.configuracao();
-		this.add(painelCaixaLogin());
-		this.setVisible(true);
+		configuracao();
+		add(tituloFrameLogin());
+		add(iconeBonecoForca(0, 175));
+		add(painelCaixaLogin());
+		
+		setVisible(true);
 	};
 	
 	
 	public static Login obterInstancia () {
-		if (INSTANCIA == null)
-			INSTANCIA = new Login();
+		if (INSTANCIA == null) INSTANCIA = new Login();
+		return INSTANCIA;}
+	
+	
+	/*
+	 * -------------------------------
+	 *  Construção dos Observadores de
+	 * 			  Login
+	 * -------------------------------
+	 */
+	
+	private class ObservadorBtnEntrar implements ActionListener {
 		
-		return INSTANCIA;
-			
+		
+		@Override
+	    public void actionPerformed(ActionEvent e) {
+			String username = inputUsername.getText().trim();
+			String senha = new String (inputSenha.getPassword());
+		}
 	}
 	
 	
@@ -56,6 +77,14 @@ public class Login extends JFrame {
 		// Alterando a cor da Janela
 		getContentPane().setBackground(UtilScreens.AMARELO_CLARO);
 		setLocationRelativeTo(null);
+	}
+	
+	private JLabel tituloFrameLogin() {
+		
+		JLabel tituloForca = new JLabel("Jogo da Forca!!", SwingConstants.CENTER);
+		tituloForca.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
+		tituloForca.setBounds(0, 60, 800, 60);
+        return tituloForca;
 	}
 	
 	
@@ -108,54 +137,85 @@ public class Login extends JFrame {
 			// -- Campo de Nome do Usuário --
 			// Construção do texto
 			JLabel nomeUsuarioOuEmail = new JLabel ("Username: ", SwingConstants.LEFT); 
-			nomeUsuarioOuEmail.setFont(new Font(Font.DIALOG, Font.BOLD, 15));
-			nomeUsuarioOuEmail.setBounds(10, 30, 100, 15);
+			nomeUsuarioOuEmail.setFont(new Font(Font.DIALOG, Font.BOLD, 13));
+			nomeUsuarioOuEmail.setBounds(10, 10, 100, 13);
 			
 			// Construção do Input
-			JTextField inputNomeOuEmail = new JTextField ();
-			inputNomeOuEmail.setFont(new Font(Font.DIALOG_INPUT, Font.PLAIN, 12));
-			inputNomeOuEmail.setBounds(90, 30, 200, 20);
+			
+			inputUsername.setFont(new Font(Font.DIALOG_INPUT, Font.PLAIN, 12));
+			inputUsername.setBounds(10, 30, 280, 20);
 			
 			// -- Campo de Nome do Usuário --
 			// Construção do texto
 			JLabel senha = new JLabel ("Senha: ", SwingConstants.LEFT); 
-			senha.setFont(new Font(Font.DIALOG, Font.BOLD, 15));
-			senha.setBounds(10, 80, 100, 15);
+			senha.setFont(new Font(Font.DIALOG, Font.BOLD, 13));
+			senha.setBounds(10, 60, 100, 15);
 						
 			// Construção do Input
-			JPasswordField inputSenha = new JPasswordField ();
 			inputSenha.setFont(new Font(Font.DIALOG_INPUT, Font.PLAIN, 12));
-			inputSenha.setBounds(90, 80, 200, 20);
+			inputSenha.setBounds(10, 80, 280, 20);
+			
+		JButton botaoEntrar = new JButton ("Entrar");
+		botaoEntrar.setFont(new Font(Font.DIALOG, Font.PLAIN, 15));
+		botaoEntrar.setBackground(UtilScreens.CINZA_CLARO);
+		botaoEntrar.setBounds(20, 140, 100, 20);
+		
+		
+		JButton botaoCancelar = new JButton ("Cancelar");
+		botaoCancelar.setFont(new Font(Font.DIALOG, Font.PLAIN, 15));
+		botaoCancelar.setBackground(UtilScreens.CINZA_CLARO);
+		botaoCancelar.setBounds(180, 140, 100, 20);
 			
 			
 		margemInputs.add(nomeUsuarioOuEmail);
-		margemInputs.add(inputNomeOuEmail);
+		margemInputs.add(inputUsername);
 		margemInputs.add(senha);
 		margemInputs.add(inputSenha);
+		margemInputs.add(botaoEntrar);
+		margemInputs.add(botaoCancelar);
 			
-			
-		
-		
-		
 		caixaLogin.add(textoLogin);
 		caixaLogin.add(fundoOrientacao);
-		caixaLogin.add(margemInputs);
-		
-		
+		caixaLogin.add(margemInputs);		
 		return caixaLogin;
 	}
 	
 		
 
 	
-	private JLabel criarLabelForca() {
-		ImageIcon forca = new ImageIcon(getClass().getResource("/images/forcaBonecoCompleto.png"));	
-	    Image redimensionada = forca.getImage().getScaledInstance(-1, 500, Image.SCALE_SMOOTH);
-	    JLabel label = new JLabel(new ImageIcon(redimensionada));
-	    label.setHorizontalAlignment(JLabel.CENTER);
-	    return label;
+	private JLabel iconeBonecoForca(
+			int posicaoX,
+			int posicaoY
+			) {
+		
+		
+		// -- Configurações para Construção da Imagem --
+		
+		// Carregamento da imagem para o projeto
+		ImageIcon imagemOriginal = new ImageIcon("./images/forcaBonecoCompleto.png");
+		
+		
+		// Redimensionamento da Imagem
+		int alturaImg = 325;
+		int larguraImg = 275;
+		Image ajusteImg = imagemOriginal.getImage().getScaledInstance(
+				larguraImg, alturaImg, Image.SCALE_SMOOTH);
+		
+		// Geração do Incone Redimensionado.
+		ImageIcon imagemForca = new ImageIcon (ajusteImg);
+		
+		
+		// Posicionamento da imagem
+		JLabel posicionamentoImg = new JLabel (imagemForca, SwingConstants.CENTER);
+		posicionamentoImg.setBounds(posicaoX, posicaoY, larguraImg, alturaImg);
+		
+		return posicionamentoImg;
+		
+		
 		
 	}
+	
+	
 	
 
 }
