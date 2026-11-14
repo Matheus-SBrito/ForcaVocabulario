@@ -25,12 +25,7 @@ public class Login extends JFrame {
 	private static Login INSTANCIA;
 	
 	private Login () {
-		
 		this.configuracao();
-		this.adicaoDeMargens();
-		this.painelCaixaLogin();
-		this.criarLabelForca();
-		
 		this.setVisible(true);
 	};
 	
@@ -44,8 +39,6 @@ public class Login extends JFrame {
 	}
 	
 	
-	
-	
 	/*
 	 * -------------------------------
 	 *  Construção dos Componentes de
@@ -54,56 +47,14 @@ public class Login extends JFrame {
 	 */
 	
 	private void configuracao () { // Configurações Básicas da tela
-		 //int[] tamanhoTela = UtilScreens.obterTamanhosDaTela();
-		this.setTitle("Login");
-		this.setSize(300, 600);
-		this.setLayout(new BorderLayout());
-		this.setLocationRelativeTo(null);
+		setTitle("Login");
+		setLayout(null);
+		setSize(UtilScreens.LARGURA_PADRAO, UtilScreens.ALTURA_PADRAO);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null);
 	}
 	
 
-	private void adicaoDeMargens() {
-		// -- Construção do fundo, Margens do painel --
-		
-		JPanel margenEsquerda = new JPanel();
-			margenEsquerda.setMaximumSize(new Dimension(500, 0));
-			margenEsquerda.setMinimumSize(new Dimension(200, 0));
-			margenEsquerda.setBackground(UtilScreens.AMARELO_CLARO);
-			margenEsquerda.add(criarLabelForca(), BorderLayout.CENTER);
-		JPanel margenDireita = new JPanel();
-			margenDireita.setPreferredSize(new Dimension(250, 0));
-			margenDireita.setBackground(UtilScreens.AMARELO_CLARO);
-				
-		JPanel margenAcima = new JPanel();
-			margenAcima.setPreferredSize(new Dimension(0, 100));
-			margenAcima.setBackground(UtilScreens.AMARELO_CLARO);
-		JPanel margenAbaixo = new JPanel();
-			margenAbaixo.setPreferredSize(new Dimension(0, 100));
-			margenAbaixo.setBackground(UtilScreens.AMARELO_CLARO);
-		
-		// -- Adicionando ao Painel principal -- 
-			
-		this.add(margenEsquerda, BorderLayout.WEST);
-		this.add(margenDireita, BorderLayout.EAST);
-		
-		this.add(margenAcima, BorderLayout.NORTH);
-		this.add(margenAbaixo, BorderLayout.SOUTH);
-	}
-	
-	
-	private void painelCaixaLogin () {
-		
-		JPanel painelLogin = new JPanel();
-			painelLogin.setBorder(
-				BorderFactory.createLineBorder(Color.BLACK, 1)
-				);
-		
-		painelLogin.setBackground(UtilScreens.LARANJA_CLARO);
-		
-		
-		
-		this.add(painelLogin, BorderLayout.CENTER);
-	}
 	
 	private JLabel criarLabelForca() {
 		ImageIcon forca = new ImageIcon(getClass().getResource("/images/forcaBonecoCompleto.png"));	
@@ -111,7 +62,6 @@ public class Login extends JFrame {
 	    JLabel label = new JLabel(new ImageIcon(redimensionada));
 	    label.setHorizontalAlignment(JLabel.CENTER);
 	    return label;
-	   
 		
 	}
 	

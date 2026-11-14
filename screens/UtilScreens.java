@@ -8,21 +8,11 @@ public class UtilScreens {
 	public static final Color LARANJA = new Color(255, 145, 77);
 	public static final Color LARANJA_CLARO = new Color(255, 190, 122);
 	public static final Color AMARELO_CLARO = new Color(0xFFEFAA);
+	
+	public static final int LARGURA_PADRAO = 800;
+	public static final int ALTURA_PADRAO = 600;
 
 	private UtilScreens() {};
-	
-	 public static int[] obterTamanhosDaTela() {
-		// Obtém a ferramenta padrão do sistema
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        
-     // Captura a dimensão da tela principal
-        Dimension screenSize = toolkit.getScreenSize();
-        
-        int largura = screenSize.width / 2;
-        int altura = screenSize.height / 2 ;
-        
-        return new int[] {largura, altura};
-	}
 	
 	
 	

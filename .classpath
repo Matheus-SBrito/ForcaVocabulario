@@ -6,26 +6,25 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path=""/>
-	<classpathentry kind="lib" path="C:/Users/mathe/Downloads/Bibliotecas XStream [new]/xstream-1.4.19.jar">
+	<classpathentry kind="lib" path="C:/Users/mathe/git/ForcaVocabulario/library/xstream-1.4.19.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/mathe/Downloads/Bibliotecas XStream [new]/xstream-jmh-1.4.19.jar">
+	<classpathentry kind="lib" path="C:/Users/mathe/git/ForcaVocabulario/library/xstream-jmh-1.4.19.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/mathe/Downloads/Bibliotecas XStream [new]/xstream-hibernate-1.4.19.jar">
+	<classpathentry kind="lib" path="C:/Users/mathe/git/ForcaVocabulario/library/xstream-hibernate-1.4.19.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/mathe/Downloads/Bibliotecas XStream [new]/xstream-benchmark-1.4.19.jar">
+	<classpathentry kind="lib" path="C:/Users/mathe/git/ForcaVocabulario/library/xstream-benchmark-1.4.19.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/henrique/Downloads/xstream-1.4.21.jar"/>
 	<classpathentry kind="output" path=""/>
 </classpath>
