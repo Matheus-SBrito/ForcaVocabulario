@@ -90,6 +90,7 @@ public class MenuInicial extends JFrame {
     private void montarTela() {
         JPanel painelTopo = new JPanel(new FlowLayout(FlowLayout.LEFT, 15, 10));
         painelTopo.add(new JLabel("Jogo da Forca"));
+        painelTopo.setBackground(UtilScreens.AMARELO_CLARO);   
         add(painelTopo, BorderLayout.NORTH);
 
         JSplitPane splitPane = new JSplitPane(
@@ -99,12 +100,14 @@ public class MenuInicial extends JFrame {
         splitPane.setResizeWeight(0.55);
         splitPane.setDividerSize(5);
 
+
         add(splitPane, BorderLayout.CENTER);
     }
 
     private JPanel criarPainelEsquerdo() {
         JPanel painelEsquerdo = new JPanel(new BorderLayout(10, 10));
         painelEsquerdo.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        painelEsquerdo.setBackground(UtilScreens.AMARELO_CLARO);
 
         JLabel lblTitulo = new JLabel("Jogo da forca !!", SwingConstants.CENTER);
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
@@ -114,6 +117,7 @@ public class MenuInicial extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.insets = new Insets(6, 6, 6, 6);
         gbc.fill = GridBagConstraints.HORIZONTAL;
+        painelBotoes.setBackground(UtilScreens.AMARELO_CLARO);
 
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -146,6 +150,7 @@ public class MenuInicial extends JFrame {
         JPanel painelDireito = new JPanel();
         painelDireito.setLayout(new BoxLayout(painelDireito, BoxLayout.Y_AXIS));
         painelDireito.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        painelDireito.setBackground(UtilScreens.AMARELO_CLARO);
 
         JLabel lblTop6 = new JLabel("Ranking - 6 melhores");
         lblTop6.setAlignmentX(Component.CENTER_ALIGNMENT);
