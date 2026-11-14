@@ -11,7 +11,7 @@ public class AtualizarVocabulario extends JFrame {
     }
 
     private void inicializarJanela() {
-        setTitle("Jogar");
+        setTitle("Atualizar Vocabulario");
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

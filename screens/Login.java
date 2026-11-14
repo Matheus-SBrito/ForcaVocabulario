@@ -59,6 +59,7 @@ public class Login extends JFrame {
 		this.setSize(300, 600);
 		this.setLayout(new BorderLayout());
 		this.setLocationRelativeTo(null);
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 
