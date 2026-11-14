@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -30,7 +31,7 @@ public class Login extends JFrame {
 	private Login () {
 		configuracao();
 		add(tituloFrameLogin());
-		iconeBonecoForca(0, 175);
+		iconeBonecoForca(0, 120);
 		painelCaixaLogin();
 		setVisible(true);
 	};
@@ -94,8 +95,8 @@ public class Login extends JFrame {
 		
 		
 		// Redimensionamento da Imagem
-		int alturaImg = 325;
-		int larguraImg = 275;
+		int alturaImg = 380;
+		int larguraImg = -1;
 		Image ajusteImg = imagemOriginal.getImage().getScaledInstance(
 				larguraImg, alturaImg, Image.SCALE_SMOOTH);
 		
@@ -105,7 +106,7 @@ public class Login extends JFrame {
 		
 		// Posicionamento da imagem
 		JLabel posicionamentoImg = new JLabel (imagemForca, SwingConstants.CENTER);
-		posicionamentoImg.setBounds(posicaoX, posicaoY, larguraImg, alturaImg);
+		posicionamentoImg.setBounds(posicaoX, posicaoY, imagemForca.getIconWidth(), imagemForca.getIconHeight());
 		
 		add(posicionamentoImg);
 		
@@ -120,7 +121,7 @@ public class Login extends JFrame {
 		// -- Configurações basicas do painel --
 		caixaLogin.setLayout(null); // Posição
 		caixaLogin.setBounds(245, 150, 300, 300); // Cordenadas, Altura e Largura
-		caixaLogin.setBackground(UtilScreens.CINZA); // Cor do painel
+		caixaLogin.setBackground(UtilScreens.AREIA); // Cor do painel
 		
 			// Adicção de bordas ao painel
 			caixaLogin.setBorder(BorderFactory.createLineBorder(UtilScreens.PRETO));
@@ -184,7 +185,7 @@ public class Login extends JFrame {
 				// -- Botões e seus respectivos textos --
 				JPanel margemInputs = new JPanel (null);
 				
-				margemInputs.setBackground(UtilScreens.CINZA);
+				margemInputs.setBackground(UtilScreens.AREIA);
 				margemInputs.setBorder(BorderFactory.createLineBorder(UtilScreens.PRETO));
 				margemInputs.setBounds(0, 110, 300, 190);
 					
@@ -212,13 +213,13 @@ public class Login extends JFrame {
 					
 				JButton botaoEntrar = new JButton ("Entrar");
 				botaoEntrar.setFont(new Font(Font.DIALOG, Font.PLAIN, 15));
-				botaoEntrar.setBackground(UtilScreens.CINZA_CLARO);
+				botaoEntrar.setBackground(Color.WHITE);
 				botaoEntrar.setBounds(20, 140, 100, 20);
 				
 				
 				JButton botaoCancelar = new JButton ("Cancelar");
 				botaoCancelar.setFont(new Font(Font.DIALOG, Font.PLAIN, 15));
-				botaoCancelar.setBackground(UtilScreens.CINZA_CLARO);
+				botaoCancelar.setBackground(Color.WHITE);
 				botaoCancelar.setBounds(180, 140, 100, 20);
 					
 					
