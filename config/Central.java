@@ -11,7 +11,17 @@ public class Central {
 	
 	private ArrayList<Usuario> jogadores = new ArrayList<Usuario> ();
 	private ArrayList<Partida> partidas = new ArrayList<Partida> ();
+	private static Central INSTANCIA;
 	
+	private Central() {}
+	public static Central obterInstancia () {
+		
+		if (INSTANCIA == null) {
+			INSTANCIA = new Central ();
+		}
+		return INSTANCIA;
+		
+	}
 	
 	/*
 	 * ----------------------------

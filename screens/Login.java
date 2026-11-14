@@ -1,6 +1,8 @@
 package screens;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -17,7 +19,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-
+import config.Central;
 
 // Utilização do padrão Singleton
 public class Login extends JFrame {
@@ -53,6 +55,11 @@ public class Login extends JFrame {
 	    public void actionPerformed(ActionEvent e) {
 			String username = inputUsername.getText().trim();
 			String senha = new String (inputSenha.getPassword());
+			
+			Central central = Central.obterInstancia();
+			
+			if (username.equals(""))
+				JOptionPane
 		}
 	}
 	
