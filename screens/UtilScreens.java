@@ -12,7 +12,8 @@ public class UtilScreens {
 	public static final Color CINZA_CLARO = new Color (230,230,230);
 	public static final Color BRANCO = new Color (255,255,255);
 	public static final Color PRETO = new Color (0,0,0);
-	
+	public static final Color VINHO = new Color (0x84A59D);
+
 	
 	public static final int LARGURA_PADRAO = 800;
 	public static final int ALTURA_PADRAO = 600;
