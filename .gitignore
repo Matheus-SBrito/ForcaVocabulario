@@ -1,5 +1,5 @@
 # Desconsiderando
-.classpath
+*.classpath
 
 # Compiled class file
 *.class
