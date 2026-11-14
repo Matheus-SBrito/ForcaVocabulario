@@ -11,7 +11,7 @@ public class HistoricoDePartidas extends JFrame {
     }
 
     private void inicializarJanela() {
-        setTitle("Jogar");
+        setTitle("Historico De Partidas");
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

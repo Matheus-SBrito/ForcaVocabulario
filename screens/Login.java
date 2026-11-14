@@ -53,7 +53,6 @@ public class Login extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 	}
-	
 
 	
 	private JLabel criarLabelForca() {

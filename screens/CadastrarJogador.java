@@ -65,9 +65,9 @@ public class CadastrarJogador extends JFrame {
 	    	jtEmail.setBounds(50, 200, 200, 30);
 	    	add(jtEmail);
 	    	
-	    	JTextField jtSenha= new JTextField();
-	    	jtSenha.setBounds(50, 280, 200, 30);
-	    	add(jtSenha);
+	    	JPasswordField jpSenha= new JPasswordField();
+	    	jpSenha.setBounds(50, 280, 200, 30);
+	    	add(jpSenha);
 	    	
 	    }
 	    

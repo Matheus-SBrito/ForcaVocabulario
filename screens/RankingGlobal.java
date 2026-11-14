@@ -11,7 +11,7 @@ public class RankingGlobal extends JFrame {
     }
 
     private void inicializarJanela() {
-        setTitle("Jogar");
+        setTitle("Ranking Global");
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

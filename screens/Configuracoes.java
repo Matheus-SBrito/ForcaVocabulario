@@ -11,7 +11,7 @@ public class Configuracoes extends JFrame {
     }
 
     private void inicializarJanela() {
-        setTitle("Jogar");
+        setTitle("Configurações");
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

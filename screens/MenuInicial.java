@@ -84,7 +84,7 @@ public class MenuInicial extends JFrame {
         btnAtualizarVocabulario.addActionListener(new ObservadorDoBotaoAtualizarVocabulario(this));
         btnMinhaConta.addActionListener(new ObservadorDoBotaoMinhaConta(this));
         btnRankingGlobal.addActionListener(new ObservadorDoBotaoRankingGlobal(this));
-        // btnConfiguracoes.addActionListener(new ObservadorDoBotaoConfiguracoes(this));
+        btnConfiguracoes.addActionListener(new ObservadorDoBotaoConfiguracoes(this));
     }
 
     private void montarTela() {
