@@ -50,6 +50,13 @@ public class Central {
 		}
 		
 		
+		public Usuario recuperarJogador(String username) {
+			if (username.contains("@"))
+				return recuperarJogadorPorEmail(username);
+			return recuperarJogadorPorNome(username);
+		}
+		
+		
 		public Usuario recuperarJogadorPorNome(String nomeDeUsuario) {
 			SearchUsuarioUnique pesquisa = new SearchUsuarioUnique(
 				Map.of("nomeDeUsuario", nomeDeUsuario));

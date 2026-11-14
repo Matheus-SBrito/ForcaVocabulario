@@ -21,6 +21,7 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
 import config.Central;
+import config.tabelas_base.*;
 
 // Utilização do padrão Singleton
 public class Login extends JFrame {
@@ -55,12 +56,27 @@ public class Login extends JFrame {
 		@Override
 	    public void actionPerformed(ActionEvent e) {
 			String username = inputUsername.getText().trim();
+			
 			String senha = new String (inputSenha.getPassword());
+			senha = senha.trim();
 			
 			Central central = Central.obterInstancia();
 			
-			if (username.equals(""))
-				JOptionPane
+			if (username.equals("") || senha.equals(""))
+				JOptionPane.showMessageDialog(
+						INSTANCIA, 
+						"Os campos, 'Usename' e/ou 'Senha',estão invalidos",
+						"Campos Obrigatórios",
+						JOptionPane.WARNING_MESSAGE
+						);
+			
+			// Verificação de Login
+			Usuario jogador = central.recuperarJogador(username);
+			
+			if (jogador.getSenha().equals(senha)) {
+				MenuInicial menu = MenuInicial.obterInstancia();
+			}
+			
 		}
 	}
 	
