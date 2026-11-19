@@ -11,9 +11,14 @@ public class Main {
 		Central central =Central.obterInstancia();
 		
 		Jogador jogUm = new Jogador("Hafiki","hg@gmail.com","senhaForte");
-		Jogador jogDois = new Jogador("Matheueus","teteu@gmail.com","senhaSuperForte");
+		Jogador jogDois = new Jogador("Matheus","teteu@gmail.com","senhaSuperForte");
 		Jogador JogTres= new Jogador("vitinho","vitaozao@gmail.com","senhaMegaForte");
 		Administrador admUnico = new Administrador("HMV administracoes","AdmLegal@gmail.com","MaiorSenhaDaHistoria");
+		
+		central.registrarJogador(admUnico);
+		central.registrarJogador(jogUm);
+		central.registrarJogador(jogDois);
+		central.registrarJogador(JogTres);
 	}
 	
 	

@@ -61,18 +61,19 @@ public class Login extends JFrame {
 			senha = senha.trim();
 			
 			Central central = Central.obterInstancia();
+			System.out.print(central.copiaListaDeJogadores());
 			
 			if (username.equals("") || senha.equals(""))
 				JOptionPane.showMessageDialog(
 						INSTANCIA, 
-						"Os campos, 'Usename' e/ou 'Senha',estão invalidos",
+						"Os campos, 'Usename' e/ou 'Senha', são Obrigatórios",
 						"Campos Obrigatórios",
 						JOptionPane.WARNING_MESSAGE
 						);
 			
 			// Verificação de Login
 			Usuario jogador = central.recuperarJogador(username);
-			
+			System.out.println("Testando:" + jogador);
 			if (jogador.getSenha().equals(senha)) {
 				MenuInicial menu = MenuInicial.obterInstancia();
 			}
@@ -238,6 +239,7 @@ public class Login extends JFrame {
 				botaoEntrar.setFont(new Font(Font.DIALOG, Font.PLAIN, 15));
 				botaoEntrar.setBackground(Color.WHITE);
 				botaoEntrar.setBounds(20, 140, 100, 20);
+				botaoEntrar.addActionListener(new ObservadorBtnEntrar());
 				
 				
 				JButton botaoCancelar = new JButton ("Cancelar");

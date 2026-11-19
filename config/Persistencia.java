@@ -1,4 +1,6 @@
 package config;
+
+import config.tabelas_base.*;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.PrintWriter;

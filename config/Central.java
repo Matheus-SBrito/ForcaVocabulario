@@ -60,7 +60,8 @@ public class Central {
 		public Usuario recuperarJogadorPorNome(String nomeDeUsuario) {
 			SearchUsuarioUnique pesquisa = new SearchUsuarioUnique(
 				Map.of("nomeDeUsuario", nomeDeUsuario));
-			
+				System.out.println(pesquisa + " " + jogadores.indexOf(pesquisa));
+				
 			if (usuarioJaCadastrado(pesquisa))
 				return jogadores.get(
 						jogadores.indexOf(pesquisa)
@@ -130,11 +131,9 @@ public class Central {
 	public class SearchUsuarioUnique extends Usuario{
 		
 		public SearchUsuarioUnique(Map<String, String> kwargs) {
-			setEmail(kwargs.get("email"));
-			setNomeDeUsuario(kwargs.get("nomeDeUsuario"));	
+			setEmail(kwargs.getOrDefault("email", ""));
+			setNomeDeUsuario(kwargs.getOrDefault("nomeDeUsuario", ""));	
 		}
-		
-		
 		
 		
 	}

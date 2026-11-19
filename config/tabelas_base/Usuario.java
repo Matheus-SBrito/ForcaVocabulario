@@ -38,13 +38,16 @@ public class Usuario {
 	public String toString () {
 		return nomeDeUsuario;}
 	
-	
-	public boolean equals (Usuario obj) {
-		if (obj != null &&  obj instanceof Usuario) 
+	@Override
+	public boolean equals (Object obj) {
+		if (obj != null &&  obj instanceof Usuario) {
+			
+			Usuario dowcase = (Usuario) obj;
 			if (
-				email.equals(obj.getEmail()) || 
-				nomeDeUsuario.equals(obj.getNomeDeUsuario())
-				) return true;
+				email.equals(dowcase.getEmail()) || 
+				nomeDeUsuario.equals(dowcase.getNomeDeUsuario())
+				) return true;}
+		
 		return false;}
 	
 	
