@@ -1,0 +1,268 @@
+package screens.login;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+
+import config.Central;
+import config.tabelas_base.*;
+import screens.UtilScreens;
+import screens.menuInicial.MenuInicial;
+
+// Utilização do padrão Singleton
+public class Login extends JFrame {
+	
+	
+	private static Login INSTANCIA;
+	private JTextField inputUsername;
+	private JPasswordField inputSenha;
+	
+	private Login () {
+		configuracao();
+		add(tituloFrameLogin());
+		iconeBonecoForca(0, 120);
+		painelCaixaLogin();
+		setVisible(true);
+	};
+	
+	
+	public static Login obterInstancia () {
+		if (INSTANCIA == null) INSTANCIA = new Login();
+		return INSTANCIA;}
+	
+	
+	/*
+	 * -------------------------------
+	 *  Construção dos Observadores de
+	 * 			  Login
+	 * -------------------------------
+	 */
+	
+	private class ObservadorBtnEntrar implements ActionListener {
+		@Override
+	    public void actionPerformed(ActionEvent e) {
+			String username = inputUsername.getText().trim();
+			
+			String senha = new String (inputSenha.getPassword());
+			senha = senha.trim();
+			
+			Central central = Central.obterInstancia();
+			System.out.print(central.copiaListaDeJogadores());
+			
+			if (username.equals("") || senha.equals(""))
+				JOptionPane.showMessageDialog(
+						INSTANCIA, 
+						"Os campos, 'Usename' e/ou 'Senha', são Obrigatórios",
+						"Campos Obrigatórios",
+						JOptionPane.WARNING_MESSAGE
+						);
+			
+			// Verificação de Login
+			Usuario jogador = central.recuperarJogador(username);
+			System.out.println("Testando:" + jogador);
+			if (jogador.getSenha().equals(senha)) {
+				MenuInicial menu = MenuInicial.obterInstancia();
+			}
+			
+		}
+	}
+	
+	
+	/*
+	 * -------------------------------
+	 *  Construção dos Componentes de
+	 * 			  Design
+	 * -------------------------------
+	 */
+	
+	private JLabel tituloFrameLogin() {
+		
+		JLabel tituloForca = new JLabel("Jogo da Forca!!", SwingConstants.CENTER);
+		tituloForca.setFont(new Font("Comic Sans MS", Font.BOLD, 40));
+		tituloForca.setBounds(0, 60, 800, 60);
+        return tituloForca;
+	}
+
+	
+	private void configuracao () { // Configurações Básicas da tela
+		
+		setTitle("Login");
+		setLayout(null);
+		setSize(UtilScreens.LARGURA_PADRAO, UtilScreens.ALTURA_PADRAO);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		// Alterando a cor da Janela
+		getContentPane().setBackground(UtilScreens.AMARELO_CLARO);
+		setLocationRelativeTo(null);
+	}
+	
+	
+	private void iconeBonecoForca(int posicaoX,int posicaoY) {
+			
+		// -- Configurações para Construção da Imagem --
+		// Carregamento da imagem para o projeto
+		ImageIcon imagemOriginal = new ImageIcon("./images/forcaBonecoCompleto.png");
+		
+		
+		// Redimensionamento da Imagem
+		int alturaImg = 380;
+		int larguraImg = -1;
+		Image ajusteImg = imagemOriginal.getImage().getScaledInstance(
+				larguraImg, alturaImg, Image.SCALE_SMOOTH);
+		
+		// Geração do Incone Redimensionado.
+		ImageIcon imagemForca = new ImageIcon (ajusteImg);
+		
+		
+		// Posicionamento da imagem
+		JLabel posicionamentoImg = new JLabel (imagemForca, SwingConstants.CENTER);
+		posicionamentoImg.setBounds(posicaoX, posicaoY, imagemForca.getIconWidth(), imagemForca.getIconHeight());
+		
+		add(posicionamentoImg);
+		
+	}
+	
+	
+	
+	// Configuração do Painel, Caixa do login
+	private void painelCaixaLogin () {
+		JPanel caixaLogin = new JPanel();
+		
+		// -- Configurações basicas do painel --
+		caixaLogin.setLayout(null); // Posição
+		caixaLogin.setBounds(245, 150, 300, 300); // Cordenadas, Altura e Largura
+		caixaLogin.setBackground(UtilScreens.AREIA); // Cor do painel
+		
+			// Adicção de bordas ao painel
+			caixaLogin.setBorder(BorderFactory.createLineBorder(UtilScreens.PRETO));
+
+		caixaLogin.add(tituloCaixa());
+		caixaLogin.add(mensagemOrientacao());
+		caixaLogin.add(entradasCaixaLogin());		
+		
+		
+		add(caixaLogin);
+	}
+	
+	
+		/*
+		 * -------------------------------------
+		 * Componentes visuis  
+		 * 
+		 * Abaixo estão os elementos 
+		 * 
+		 * -------------------------------------
+		 */
+	
+			
+			private JLabel tituloCaixa () {// Titulo da caixa de login
+				 
+				JLabel textoLogin = new JLabel ("Login", SwingConstants.CENTER); // Texto e Alinhamento
+				textoLogin.setFont(new Font(Font.DIALOG, Font.BOLD, 20)); // Fonte, Negrito e Tamanho
+				textoLogin.setBounds(0,0,300,40); // Cordenadas e Tamnho da Caixa do Texto
+				
+					// Adição de borda a caixa do texto
+					textoLogin.setBorder(BorderFactory.createLineBorder(UtilScreens.PRETO));
+					
+				return textoLogin;
+			}
+			
+			
+			private JPanel mensagemOrientacao () { // Configuração das margens e o texto
+				// -- Mensagem de Orientação --
+				JPanel fundoOrientacao = new JPanel (); /// Construção da Margen e Fundo
+				fundoOrientacao.setLayout(null);
+				fundoOrientacao.setBackground(UtilScreens.BRANCO);
+				fundoOrientacao.setBorder(BorderFactory.createLineBorder(UtilScreens.PRETO));
+				fundoOrientacao.setBounds(3, 50, 294, 50);
+					
+				// Texto
+					JLabel orientacaoLogin = new JLabel (
+						"<html>O campo 'username' aceita duas formas de entrada, " +
+						"pode ser utilizado tanto o 'email' cadastrado, quanto " +
+						"'nome de usuário' atual.</html>"); // Tags Html para o texto 'descer'
+					
+					orientacaoLogin.setFont(new Font(Font.DIALOG, Font.ITALIC, 12)); // Caracteriscas da fonte
+					orientacaoLogin.setBounds(3, 0, 290, 50);
+					
+				fundoOrientacao.add(orientacaoLogin);
+				
+				return fundoOrientacao;
+			}
+			
+			
+			private JPanel entradasCaixaLogin () {
+				// -- Botões e seus respectivos textos --
+				JPanel margemInputs = new JPanel (null);
+				
+				margemInputs.setBackground(UtilScreens.AREIA);
+				margemInputs.setBorder(BorderFactory.createLineBorder(UtilScreens.PRETO));
+				margemInputs.setBounds(0, 110, 300, 190);
+					
+					// -- Campo de Nome do Usuário --
+					// Construção do texto
+					JLabel nomeUsuarioOuEmail = new JLabel ("Username/Email: ", SwingConstants.LEFT); 
+					nomeUsuarioOuEmail.setFont(new Font(Font.DIALOG, Font.BOLD, 13));
+					nomeUsuarioOuEmail.setBounds(10, 10, 200, 13);
+					
+					// Construção do Input
+					inputUsername = new JTextField ();
+					inputUsername.setFont(new Font(Font.DIALOG_INPUT, Font.PLAIN, 12));
+					inputUsername.setBounds(10, 30, 280, 20);
+					
+					// -- Campo de Nome do Usuário --
+					// Construção do texto
+					JLabel senha = new JLabel ("Senha: ", SwingConstants.LEFT); 
+					senha.setFont(new Font(Font.DIALOG, Font.BOLD, 13));
+					senha.setBounds(10, 60, 100, 15);
+								
+					// Construção do Input
+					inputSenha = new JPasswordField();
+					inputSenha.setFont(new Font(Font.DIALOG_INPUT, Font.PLAIN, 12));
+					inputSenha.setBounds(10, 80, 280, 20);
+					
+				JButton botaoEntrar = new JButton ("Entrar");
+				botaoEntrar.setFont(new Font(Font.DIALOG, Font.PLAIN, 15));
+				botaoEntrar.setBackground(Color.WHITE);
+				botaoEntrar.setBounds(20, 140, 100, 20);
+				botaoEntrar.addActionListener(new ObservadorBtnEntrar());
+				
+				
+				JButton botaoCancelar = new JButton ("Cancelar");
+				botaoCancelar.setFont(new Font(Font.DIALOG, Font.PLAIN, 15));
+				botaoCancelar.setBackground(Color.WHITE);
+				botaoCancelar.setBounds(180, 140, 100, 20);
+					
+					
+				margemInputs.add(nomeUsuarioOuEmail);
+				margemInputs.add(inputUsername);
+				margemInputs.add(senha);
+				margemInputs.add(inputSenha);
+				margemInputs.add(botaoEntrar);
+				margemInputs.add(botaoCancelar);
+				return margemInputs;
+			}
+			
+		
+	// Teste e Vizualização da Tela Individualmente
+	public static void main (String[] args) {
+		Login login = Login.obterInstancia();
+	}
+
+}

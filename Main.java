@@ -4,6 +4,7 @@ import javax.swing.SwingUtilities;
 import config.Central;
 import config.tabelas_base.*;
 import screens.*;
+import screens.telaInicial.TelaInicial;
 
 public class Main {
 	
