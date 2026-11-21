@@ -57,7 +57,6 @@ public class CadastrarJogador extends JFrame {
 	    	    lbForca.setBounds(2,2,100,100);
 	    	   add(lbForca);
 	    		
-	   
 	    }
 	    
 	    

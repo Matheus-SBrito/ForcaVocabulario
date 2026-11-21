@@ -217,7 +217,7 @@ public class Login extends JFrame {
 					// Construção do texto
 					JLabel nomeUsuarioOuEmail = new JLabel ("Username/Email: ", SwingConstants.LEFT); 
 					nomeUsuarioOuEmail.setFont(new Font(Font.DIALOG, Font.BOLD, 13));
-					nomeUsuarioOuEmail.setBounds(10, 10, 100, 13);
+					nomeUsuarioOuEmail.setBounds(10, 10, 200, 13);
 					
 					// Construção do Input
 					inputUsername = new JTextField ();
@@ -256,6 +256,11 @@ public class Login extends JFrame {
 				margemInputs.add(botaoCancelar);
 				return margemInputs;
 			}
-
+			
+		
+	// Teste e Vizualização da Tela Individualmente
+	public static void main (String[] args) {
+		Login login = Login.obterInstancia();
+	}
 
 }
