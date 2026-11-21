@@ -3,6 +3,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
+import screens.ModoDeJogo;
+
 public class ObservadorDoBotaoJogar implements ActionListener {
 
 		private JFrame menuInicial;
