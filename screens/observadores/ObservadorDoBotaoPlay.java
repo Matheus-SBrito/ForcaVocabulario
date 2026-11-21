@@ -1,8 +1,10 @@
-package screens;
+package screens.observadores;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+
+import screens.Login;
 
 public class ObservadorDoBotaoPlay implements ActionListener{
 	 private JFrame telaInicial;

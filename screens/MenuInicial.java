@@ -15,6 +15,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
+import screens.observadores.*;
+
 public class MenuInicial extends JFrame {
     private static MenuInicial INSTANCIA;
 

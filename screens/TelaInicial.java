@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
+import screens.observadores.*;
 
 
 public class TelaInicial extends JFrame{

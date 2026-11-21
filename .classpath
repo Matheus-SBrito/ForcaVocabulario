@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path=""/>
-	<classpathentry kind="lib" path="C:/Users/mathe/git/ForcaVocabulario/library/xstream-1.4.19.jar">
+	<classpathentry kind="lib" path="/home/matheus-s-brito/Bibliotecas XStream/xstream-1.4.19.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/mathe/git/ForcaVocabulario/library/xstream-jmh-1.4.19.jar">
+	<classpathentry kind="lib" path="/home/matheus-s-brito/Bibliotecas XStream/xstream-jmh-1.4.19.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/mathe/git/ForcaVocabulario/library/xstream-hibernate-1.4.19.jar">
+	<classpathentry kind="lib" path="/home/matheus-s-brito/Bibliotecas XStream/xstream-hibernate-1.4.19.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/mathe/git/ForcaVocabulario/library/xstream-benchmark-1.4.19.jar">
+	<classpathentry kind="lib" path="/home/matheus-s-brito/Bibliotecas XStream/xstream-benchmark-1.4.19.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>
