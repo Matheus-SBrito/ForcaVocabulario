@@ -23,7 +23,8 @@ import config.tabelas_base.Usuario;
 public class LoginADM extends JFrame{
 	
 	private static LoginADM INSTANCIA;
-	private JTextField inputUsername;
+	private JTextField inputNomeDoUsuario;
+	private JTextField inputEmailDoUsuario;
 	private JPasswordField inputSenha;
 	
 	private LoginADM () {
@@ -156,14 +157,17 @@ public class LoginADM extends JFrame{
 				fundoOrientacao.setLayout(null);
 				fundoOrientacao.setBackground(UtilScreens.BRANCO);
 				fundoOrientacao.setBorder(BorderFactory.createLineBorder(UtilScreens.PRETO));
-				fundoOrientacao.setBounds(3, 50, 294, 50);
+				fundoOrientacao.setBounds(3, 50, 294, 70);
 					
 				// Texto
 					JLabel orientacaoLogin = new JLabel (
-						"<html>É necessário que você prencha todos os campos, todos ele estão são obrigatorios</html>"); // Tags Html para o texto 'descer'
+						"<html>Devido a faltra de dados cadastrados no sistema "
+						+ "é necessário que o jogador se cadastre. Seu cadastro "
+						+ "tem o privilegio de administrador logo seu usuário "
+						+ "pode cadastrar ouutros jogadores</html>"); // Tags Html para o texto 'descer'
 					
 					orientacaoLogin.setFont(new Font(Font.DIALOG, Font.ITALIC, 12)); // Caracteriscas da fonte
-					orientacaoLogin.setBounds(3, 0, 290, 50);
+					orientacaoLogin.setBounds(3, 0, 290, 70);
 					
 				fundoOrientacao.add(orientacaoLogin);
 				
@@ -177,18 +181,29 @@ public class LoginADM extends JFrame{
 				
 				margemInputs.setBackground(UtilScreens.AREIA);
 				margemInputs.setBorder(BorderFactory.createLineBorder(UtilScreens.PRETO));
-				margemInputs.setBounds(0, 110, 300, 190);
+				margemInputs.setBounds(0, 130, 300, 190);
 					
 					// -- Campo de Nome do Usuário --
 					// Construção do texto
-					JLabel nomeUsuarioOuEmail = new JLabel ("Username: ", SwingConstants.LEFT); 
-					nomeUsuarioOuEmail.setFont(new Font(Font.DIALOG, Font.BOLD, 13));
-					nomeUsuarioOuEmail.setBounds(10, 10, 100, 13);
+					JLabel nomeDoUsuario = new JLabel ("Nome de Usuario: ", SwingConstants.LEFT); 
+					nomeDoUsuario.setFont(new Font(Font.DIALOG, Font.BOLD, 8));
+					nomeDoUsuario.setBounds(10, 10, 100, 8);
 					
 					// Construção do Input
-					inputUsername = new JTextField ();
-					inputUsername.setFont(new Font(Font.DIALOG_INPUT, Font.PLAIN, 12));
-					inputUsername.setBounds(10, 30, 280, 20);
+					inputNomeDoUsuario = new JTextField ();
+					inputNomeDoUsuario.setFont(new Font(Font.DIALOG_INPUT, Font.PLAIN, 12));
+					inputNomeDoUsuario.setBounds(10, 30, 280, 20);
+					
+					// -- Campo de Email do Usuario --
+					// Construção do texto
+					JLabel emailUsuario = new JLabel ("Email: ", SwingConstants.LEFT); 
+					emailUsuario.setFont(new Font(Font.DIALOG, Font.BOLD, 8));
+					emailUsuario.setBounds(10, 10, 100, 13);
+					
+					// Construção do Input
+					inputEmailDoUsuario = new JTextField ();
+					inputEmailDoUsuario.setFont(new Font(Font.DIALOG_INPUT, Font.PLAIN, 12));
+					inputEmailDoUsuario.setBounds(10, 30, 280, 20);
 					
 					// -- Campo de Nome do Usuário --
 					// Construção do texto
@@ -213,8 +228,8 @@ public class LoginADM extends JFrame{
 				botaoCancelar.setBounds(180, 140, 100, 20);
 					
 					
-				margemInputs.add(nomeUsuarioOuEmail);
-				margemInputs.add(inputUsername);
+				margemInputs.add(emailUsuario);
+				margemInputs.add(inputNomeDoUsuario);
 				margemInputs.add(senha);
 				margemInputs.add(inputSenha);
 				margemInputs.add(botaoEntrar);

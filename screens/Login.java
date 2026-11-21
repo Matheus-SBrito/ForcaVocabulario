@@ -215,7 +215,7 @@ public class Login extends JFrame {
 					
 					// -- Campo de Nome do Usuário --
 					// Construção do texto
-					JLabel nomeUsuarioOuEmail = new JLabel ("Username: ", SwingConstants.LEFT); 
+					JLabel nomeUsuarioOuEmail = new JLabel ("Username/Email: ", SwingConstants.LEFT); 
 					nomeUsuarioOuEmail.setFont(new Font(Font.DIALOG, Font.BOLD, 13));
 					nomeUsuarioOuEmail.setBounds(10, 10, 100, 13);
 					
