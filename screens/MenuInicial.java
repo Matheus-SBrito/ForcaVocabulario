@@ -28,7 +28,7 @@ public class MenuInicial extends JFrame {
     private JButton btnRankingGlobal;
     private JButton btnConfiguracoes;
 
-    private MenuInicial() {
+    public MenuInicial() {
         gerarTela();
         gerarComponentes();
         setVisible(true);

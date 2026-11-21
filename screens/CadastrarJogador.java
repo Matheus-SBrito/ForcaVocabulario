@@ -1,15 +1,20 @@
 package screens;
-
-import javax.swing.*;
 import java.awt.*;
+import javax.swing.*;
+
+import screens.observadores.ObservadorDoBotaoCadastrar;
+import screens.observadores.ObservadorDoBotaoSair;
 
 public class CadastrarJogador extends JFrame {
-
+		private JButton btSair;
+		private JButton btCadastrar;
+		
 	   public CadastrarJogador() {
 	        inicializarJanela();
 	        criarComponentes();
 	        criarCamposTexto();
 	        criarBotoes();
+	        
 	    }
 
 	    private void inicializarJanela() {
@@ -72,19 +77,27 @@ public class CadastrarJogador extends JFrame {
 	    }
 	    
 	    private void criarBotoes() {
-	    	JButton btSair = new JButton("SAIR");
-	    	btSair.setBounds(50, 350, 130, 30);
-	    	btSair.setOpaque(true);
-	    	btSair.setBackground(Color.white);
-	    	add(btSair);
-	    	
-	    	JButton btCadastrar = new JButton("CADASTRAR");
-	    	btCadastrar.setBounds(320,350,130,30);
-	    	btCadastrar.setOpaque(true);
-	    	btCadastrar.setBackground(Color.white);
-	    	add(btCadastrar);
+	        btSair = new JButton("SAIR");
+	        btSair.setBounds(50, 350, 130, 30);
+	        btSair.setOpaque(true);
+	        btSair.setBackground(Color.white);
+	        add(btSair);
+
+	        btCadastrar = new JButton("CADASTRAR");
+	        btCadastrar.setBounds(320, 350, 130, 30);
+	        btCadastrar.setOpaque(true);
+	        btCadastrar.setBackground(Color.white);
+	        add(btCadastrar);
+
+	        criarObservadores();
 	    }
 	    public static void main(String[] args) {
 	        SwingUtilities.invokeLater(() -> new CadastrarJogador().setVisible(true));
+	    }
+	    
+	    private void criarObservadores() {
+	    	btSair.addActionListener(new ObservadorDoBotaoSair(this));
+	    	btCadastrar.addActionListener(new ObservadorDoBotaoCadastrar(this));
+	    	
 	    }
 }
