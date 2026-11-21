@@ -3,8 +3,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 
-import screens.Jogar;
-
 public class ObservadorDoBotaoJogar implements ActionListener {
 
 		private JFrame menuInicial;
@@ -16,7 +14,7 @@ public class ObservadorDoBotaoJogar implements ActionListener {
 
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
-	        Jogar telaJogar = new Jogar();
+	        ModoDeJogo telaJogar = new ModoDeJogo();
 	        telaJogar.setVisible(true);
 
 	        if (menuInicial != null) {

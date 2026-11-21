@@ -1,4 +1,4 @@
-package screens;
+package screens.observadores;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
+
+import screens.UtilScreens;
 
 public class ObservadorHoverDoBotaoPlay extends MouseAdapter{
 	 private JButton botao;

@@ -3,15 +3,15 @@ package screens;
 import javax.swing.*;
 import java.awt.*;
 
-public class Jogar extends JFrame {
+public class JogarMultiplayer extends JFrame {
 
-    public Jogar() {
+    public JogarMultiplayer() {
         inicializarJanela();
         criarComponentes();
     }
 
     private void inicializarJanela() {
-        setTitle("Jogar");
+        setTitle("Jogar Multiplayer");
         setSize(500, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
