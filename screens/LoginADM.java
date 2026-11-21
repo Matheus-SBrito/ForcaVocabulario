@@ -160,9 +160,7 @@ public class LoginADM extends JFrame{
 					
 				// Texto
 					JLabel orientacaoLogin = new JLabel (
-						"<html>O campo 'username' aceita duas formas de entrada, " +
-						"pode ser utilizado tanto o 'email' cadastrado, quanto " +
-						"'nome de usuário' atual.</html>"); // Tags Html para o texto 'descer'
+						"<html>É necessário que você prencha todos os campos, todos ele estão são obrigatorios</html>"); // Tags Html para o texto 'descer'
 					
 					orientacaoLogin.setFont(new Font(Font.DIALOG, Font.ITALIC, 12)); // Caracteriscas da fonte
 					orientacaoLogin.setBounds(3, 0, 290, 50);
