@@ -7,6 +7,9 @@ import screens.UtilScreens;
 public class CadastrarJogador extends JFrame {
 		private JButton btSair;
 		private JButton btCadastrar;
+		private JTextField jtNomeUsu;
+		private JTextField jtEmail;
+		private JPasswordField jpSenha;
 		
 	   public CadastrarJogador() {
 	        inicializarJanela();
@@ -60,15 +63,15 @@ public class CadastrarJogador extends JFrame {
 	    
 	    
 	    private void criarCamposTexto() {
-	    	JTextField jtNomeUsu = new JTextField();
+	    	jtNomeUsu = new JTextField();
 	    	jtNomeUsu.setBounds(50,120,200,30);
 	    	add(jtNomeUsu);
 	    	
-	    	JTextField jtEmail= new JTextField();
+	    	jtEmail = new JTextField();
 	    	jtEmail.setBounds(50, 200, 200, 30);
 	    	add(jtEmail);
 	    	
-	    	JPasswordField jpSenha= new JPasswordField();
+	    	jpSenha = new JPasswordField();
 	    	jpSenha.setBounds(50, 280, 200, 30);
 	    	add(jpSenha);
 	    	
@@ -89,6 +92,18 @@ public class CadastrarJogador extends JFrame {
 
 	        criarObservadores();
 	    }
+	    // Acesso aos campos para o observador do botão CADASTRAR
+	    public String getNomeUsuario() { return jtNomeUsu.getText().trim(); }
+	    public String getEmail() { return jtEmail.getText().trim(); }
+	    public String getSenha() { return new String(jpSenha.getPassword()).trim(); }
+
+	    public void limparCampos() {
+	    	jtNomeUsu.setText("");
+	    	jtEmail.setText("");
+	    	jpSenha.setText("");
+	    	jtNomeUsu.requestFocusInWindow();
+	    }
+
 	    public static void main(String[] args) {
 	        SwingUtilities.invokeLater(() -> new CadastrarJogador().setVisible(true));
 	    }

@@ -85,7 +85,10 @@ public class LoginADM extends JFrame{
 			
 		// -- Configurações para Construção da Imagem --
 		// Carregamento da imagem para o projeto
-		ImageIcon imagemOriginal = new ImageIcon("./images/forcaBonecoCompleto.png");
+		java.net.URL urlImagem = getClass().getResource("/images/forcaBonecoCompleto.png");
+		ImageIcon imagemOriginal = (urlImagem != null)
+				? new ImageIcon(urlImagem)
+				: new ImageIcon("./images/forcaBonecoCompleto.png");
 		
 		
 		// Redimensionamento da Imagem

@@ -14,6 +14,11 @@ public class Central {
 	private static Central INSTANCIA;
 	
 	private Central() {}
+
+	// Usado pela persistência para colocar em uso a Central carregada do arquivo
+	public static void definirInstancia (Central central) {
+		if (central != null) INSTANCIA = central;
+	}
 	public static Central obterInstancia () {
 		
 		if (INSTANCIA == null) {
@@ -45,8 +50,7 @@ public class Central {
 	// Consultar
 		
 		public ArrayList<Usuario> copiaListaDeJogadores (){
-			ArrayList<Usuario> copia = (ArrayList<Usuario>) jogadores.clone();
-			return copia;
+			return new ArrayList<Usuario>(jogadores);
 		}
 		
 		
@@ -60,8 +64,6 @@ public class Central {
 		public Usuario recuperarJogadorPorNome(String nomeDeUsuario) {
 			SearchUsuarioUnique pesquisa = new SearchUsuarioUnique(
 				Map.of("nomeDeUsuario", nomeDeUsuario));
-				System.out.println(pesquisa + " " + jogadores.indexOf(pesquisa));
-				
 			if (usuarioJaCadastrado(pesquisa))
 				return jogadores.get(
 						jogadores.indexOf(pesquisa)

@@ -24,6 +24,7 @@ import config.Central;
 import config.tabelas_base.*;
 import screens.UtilScreens;
 import screens.menuInicial.MenuInicial;
+import screens.telaInicial.TelaInicial;
 
 // Utilização do padrão Singleton
 public class Login extends JFrame {
@@ -58,28 +59,44 @@ public class Login extends JFrame {
 		@Override
 	    public void actionPerformed(ActionEvent e) {
 			String username = inputUsername.getText().trim();
-			
-			String senha = new String (inputSenha.getPassword());
-			senha = senha.trim();
-			
-			Central central = Central.obterInstancia();
-			System.out.print(central.copiaListaDeJogadores());
-			
-			if (username.equals("") || senha.equals(""))
+			String senha = new String(inputSenha.getPassword()).trim();
+
+			if (username.isEmpty() || senha.isEmpty()) {
 				JOptionPane.showMessageDialog(
-						INSTANCIA, 
-						"Os campos, 'Usename' e/ou 'Senha', são Obrigatórios",
+						Login.this,
+						"Os campos 'Username/Email' e 'Senha' são obrigatórios",
 						"Campos Obrigatórios",
 						JOptionPane.WARNING_MESSAGE
 						);
-			
-			// Verificação de Login
-			Usuario jogador = central.recuperarJogador(username);
-			System.out.println("Testando:" + jogador);
-			if (jogador.getSenha().equals(senha)) {
-				MenuInicial menu = MenuInicial.obterInstancia();
+				return;
 			}
-			
+
+			// Verificação de Login
+			Usuario usuario = Central.obterInstancia().recuperarJogador(username);
+
+			if (usuario == null || !usuario.getSenha().equals(senha)) {
+				JOptionPane.showMessageDialog(
+						Login.this,
+						"Usuário/e-mail ou senha incorretos",
+						"Falha no Login",
+						JOptionPane.ERROR_MESSAGE
+						);
+				return;
+			}
+
+			inputSenha.setText("");
+			MenuInicial.obterInstancia().setVisible(true);
+			dispose();
+		}
+	}
+
+
+	private class ObservadorBtnCancelar implements ActionListener {
+		@Override
+	    public void actionPerformed(ActionEvent e) {
+			inputSenha.setText("");
+			new TelaInicial().setVisible(true);
+			dispose();
 		}
 	}
 	
@@ -117,7 +134,10 @@ public class Login extends JFrame {
 			
 		// -- Configurações para Construção da Imagem --
 		// Carregamento da imagem para o projeto
-		ImageIcon imagemOriginal = new ImageIcon("./images/forcaBonecoCompleto.png");
+		java.net.URL urlImagem = getClass().getResource("/images/forcaBonecoCompleto.png");
+		ImageIcon imagemOriginal = (urlImagem != null)
+				? new ImageIcon(urlImagem)
+				: new ImageIcon("./images/forcaBonecoCompleto.png");
 		
 		
 		// Redimensionamento da Imagem
@@ -248,6 +268,7 @@ public class Login extends JFrame {
 				botaoCancelar.setFont(new Font(Font.DIALOG, Font.PLAIN, 15));
 				botaoCancelar.setBackground(Color.WHITE);
 				botaoCancelar.setBounds(180, 140, 100, 20);
+				botaoCancelar.addActionListener(new ObservadorBtnCancelar());
 					
 					
 				margemInputs.add(nomeUsuarioOuEmail);

@@ -8,6 +8,9 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 import screens.TelaBase;
+import screens.jogarMultiplayer.JogarMultiplayer;
+import screens.jogarSolo.JogarSolo;
+import screens.menuInicial.MenuInicial;
 
 /**
  * Tela de escolha do modo de jogo: partida solo ou multiplayer.
@@ -15,6 +18,7 @@ import screens.TelaBase;
 public class ModoDeJogo extends TelaBase {
 	private JButton btnSolo;
 	private JButton btnMultiplayer;
+	private JButton btnVoltar;
 
 	public ModoDeJogo() {
 		super(); // janela, título e imagem da forca vêm da TelaBase
@@ -23,8 +27,10 @@ public class ModoDeJogo extends TelaBase {
 	}
 
 	private void criarBotoes() {
-		btnSolo = criarBotaoModo("Partida solo", 300, 220, 200, 60);
-		btnMultiplayer = criarBotaoModo("Partida Multiplayer", 300, 300, 200, 80);
+		btnSolo = criarBotaoModo("Partida solo", 310, 220, 250, 60);
+		btnMultiplayer = criarBotaoModo("Partida Multiplayer", 310, 300, 250, 60);
+		btnVoltar = criarBotaoModo("Voltar", 310, 400, 250, 45);
+		btnVoltar.setFont(new Font("Comic Sans MS", Font.BOLD, 18));
 	}
 
 	private JButton criarBotaoModo(String texto, int x, int y, int largura, int altura) {
@@ -41,8 +47,16 @@ public class ModoDeJogo extends TelaBase {
 
 	private void gerarObservadores() {
 		btnSolo.addActionListener(e -> {
+			new JogarSolo().setVisible(true);
+			dispose();
 		});
 		btnMultiplayer.addActionListener(e -> {
+			new JogarMultiplayer().setVisible(true);
+			dispose();
+		});
+		btnVoltar.addActionListener(e -> {
+			MenuInicial.obterInstancia().setVisible(true);
+			dispose();
 		});
 	}
 }

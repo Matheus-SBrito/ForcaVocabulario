@@ -38,19 +38,25 @@ public class Usuario {
 	public String toString () {
 		return nomeDeUsuario;}
 	
+	// Dois usuários são o "mesmo" se tiverem o mesmo e-mail OU o mesmo nome de usuário.
 	@Override
 	public boolean equals (Object obj) {
-		if (obj != null &&  obj instanceof Usuario) {
-			
-			Usuario dowcase = (Usuario) obj;
-			if (
-				email.equals(dowcase.getEmail()) || 
-				nomeDeUsuario.equals(dowcase.getNomeDeUsuario())
-				) return true;}
-		
-		return false;}
-	
-	
-	
+		if (this == obj) return true;
+		if (!(obj instanceof Usuario)) return false;
+
+		Usuario outro = (Usuario) obj;
+		return iguaisNaoVazios(email, outro.getEmail())
+			|| iguaisNaoVazios(nomeDeUsuario, outro.getNomeDeUsuario());
+	}
+
+	// Como equals usa "OU", o único hashCode consistente é um valor constante.
+	@Override
+	public int hashCode () {
+		return 1;
+	}
+
+	private static boolean iguaisNaoVazios (String a, String b) {
+		return a != null && !a.isEmpty() && a.equals(b);
+	}
 
 }

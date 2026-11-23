@@ -7,18 +7,16 @@ import screens.menuInicial.MenuInicial;
 public class ObservadorDoBotaoSair implements ActionListener{
 	private JFrame cadastrarJogador;
 	
-	public ObservadorDoBotaoSair(JFrame menuInicial) {
-		this.cadastrarJogador = menuInicial;
+	public ObservadorDoBotaoSair(JFrame cadastrarJogador) {
+		this.cadastrarJogador = cadastrarJogador;
 	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		MenuInicial telaMenuInicial = new MenuInicial();
-		telaMenuInicial.setVisible(true);
+		MenuInicial.obterInstancia().setVisible(true);
 		if(cadastrarJogador!= null) {
 			cadastrarJogador.dispose();
 		}
-		// TODO Auto-generated method stub
-		
 	}
 
 }
