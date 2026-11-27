@@ -63,9 +63,12 @@ public class MenuInicial extends JFrame {
         btnCadastrarJogador = new JButton("Cadastrar Jogador");
         btnCadastrarJogador.setPreferredSize(tamanhoPadrao);
 
+        
         btnHistoricoPartidas = new JButton("Histórico de Partidas");
         btnHistoricoPartidas.setPreferredSize(tamanhoPadrao);
 
+        
+        
         btnAtualizarVocabulario = new JButton("Atualizar Vocabulário");
         btnAtualizarVocabulario.setPreferredSize(tamanhoPadrao);
 
